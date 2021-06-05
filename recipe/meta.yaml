@@ -1,5 +1,5 @@
 {% set name = "QuickPotato" %}
-{% set version = "1.0.0" %}
+{% set version = "1.0.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/QuickPotato-{{ version }}.tar.gz
-  sha256: b792111adc913b328add76c0a0315745e52cfd0835de9803f38c92417d277bb5
+  sha256: 9ddae0ad2f730ecf1647ff95e18c0a6532df3bb43c68fd59891196a5e6e610e3
 
 build:
   number: 0
