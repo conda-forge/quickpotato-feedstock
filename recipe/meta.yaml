@@ -7,25 +7,26 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/QuickPotato-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/QuickPotato-{{ version }}.tar.gz
   sha256: 9ddae0ad2f730ecf1647ff95e18c0a6532df3bb43c68fd59891196a5e6e610e3
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python {{ python_min }}
+    - setuptools
   run:
     - jinja2
     - numpy
     - pandas
     - plotly
     - pymysql
-    - python >=3.7
+    - python >={{ python_min }}
     - pyyaml
     - scipy
     - sqlalchemy
@@ -39,6 +40,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/JoeyHendricks/QuickPotato
